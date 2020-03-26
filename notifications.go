@@ -32,6 +32,7 @@ type Notification struct {
 type NotificationRequest struct {
 	AppID                  string            `json:"app_id"`
 	Contents               map[string]string `json:"contents,omitempty"`
+	Subtitle               map[string]string `json:"subtitle,omitempty"`
 	Headings               map[string]string `json:"headings,omitempty"`
 	IsIOS                  bool              `json:"isIos,omitempty"`
 	IsAndroid              bool              `json:"isAndroid,omitempty"`
@@ -44,6 +45,7 @@ type NotificationRequest struct {
 	IncludedSegments       []string          `json:"included_segments,omitempty"`
 	ExcludedSegments       []string          `json:"excluded_segments,omitempty"`
 	IncludePlayerIDs       []string          `json:"include_player_ids,omitempty"`
+	IncludeExternalUserIDs []string          `json:"include_external_user_ids,omitempty"`
 	IncludeIOSTokens       []string          `json:"include_ios_tokens,omitempty"`
 	IncludeAndroidRegIDs   []string          `json:"include_android_reg_ids,omitempty"`
 	IncludeWPURIs          []string          `json:"include_wp_uris,omitempty"`
@@ -78,6 +80,8 @@ type NotificationRequest struct {
 	SendAfter              string            `json:"send_after,omitempty"`
 	DelayedOption          string            `json:"delayed_option,omitempty"`
 	DeliveryTimeOfDay      string            `json:"delivery_time_of_day,omitempty"`
+	TTL                    int               `json:"ttl,omitempty"`
+	Priority               int               `json:"priority,omitempty"`
 	AndroidLEDColor        string            `json:"android_led_color,omitempty"`
 	AndroidAccentColor     string            `json:"android_accent_color,omitempty"`
 	AndroidVisibility      int               `json:"android_visibility,omitempty"`
@@ -87,6 +91,7 @@ type NotificationRequest struct {
 	TemplateID             string            `json:"template_id,omitempty"`
 	AndroidGroup           string            `json:"android_group,omitempty"`
 	AndroidGroupMessage    interface{}       `json:"android_group_message,omitempty"`
+	AndroidChannelID       string            `json:"android_channel_id,omitempty"`
 	ADMGroup               string            `json:"adm_group,omitempty"`
 	ADMGroupMessage        interface{}       `json:"adm_group_message,omitempty"`
 	Filters                interface{}       `json:"filters,omitempty"`
