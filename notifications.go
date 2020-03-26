@@ -29,6 +29,7 @@ type Notification struct {
 }
 
 // NotificationRequest represents a request to create a notification.
+// https://documentation.onesignal.com/reference#create-notification
 type NotificationRequest struct {
 	AppID                  string            `json:"app_id"`
 	Contents               map[string]string `json:"contents,omitempty"`
@@ -92,6 +93,9 @@ type NotificationRequest struct {
 	AndroidGroup           string            `json:"android_group,omitempty"`
 	AndroidGroupMessage    interface{}       `json:"android_group_message,omitempty"`
 	AndroidChannelID       string            `json:"android_channel_id,omitempty"`
+	ThreadID               string            `json:"thread_id,omitempty"`
+	SummaryArg             string            `json:"summary_arg,omitempty"`
+	SummaryArgCount        int               `json:"summary_arg_count,omitempty"`
 	ADMGroup               string            `json:"adm_group,omitempty"`
 	ADMGroupMessage        interface{}       `json:"adm_group_message,omitempty"`
 	Filters                interface{}       `json:"filters,omitempty"`
